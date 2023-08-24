@@ -1,0 +1,17 @@
+{
+  "name": "hug",
+  "version": "1.0.0",
+  "description": "B2C 형태의 반응형 웹 기반 커머스 플랫폼 프로젝트",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "node-sass" : "node-sass",
+    "sass" : "node-sass -wr styles/main.scss style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
