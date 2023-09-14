@@ -78,3 +78,27 @@ B2C 형태의 반응형 웹 기반 커머스 플랫폼 프로젝트
   </button>
 </div>
 ```
+
+### 2. sidebar
+
+- 로그인을 하지 않은 경우
+
+```html
+<div class="sidebar-auth">
+  <a class="btn-outlined btn-40" href="/">로그인</a>
+  <a class="btn-primary btn-40" href="/">로그아웃</a>
+</div>
+```
+
+- 로그인을 한 경우
+
+```html
+<div class="sidebar-user">
+  <a href="/">
+    <div class="avatar-24">
+      <img src="./assets/images/img-user-01.jpg" alt="프로필 이미지" />
+    </div>
+    <strong class="username">토끼리</strong>
+  </a>
+</div>
+```
