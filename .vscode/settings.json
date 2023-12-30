@@ -1,5 +1,81 @@
 {
   "editor.tabSize": 2,
-  "editor.fontSize": 12,
-  "files.autoSave": "afterDelay"
+  "editor.fontSize": 13,
+  "editor.formatOnSave": true,
+  "files.autoSave": "afterDelay",
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true,
+  "markdown.preview.typographer": false,
+  "editor.fontFamily": "'Fira Code', 'JetBrains Mono', 'Malgun Gothic'",
+  "editor.fontLigatures": true,
+  "editor.renderWhitespace": "boundary",
+  // 커서 스타일
+  "editor.cursorStyle": "line",
+  "editor.cursorBlinking": "expand",
+  "editor.cursorWidth": 3,
+  // 터미널 커서 스타일
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorWidth": 2,
+  "terminal.integrated.cursorBlinking": true,
+  "workbench.colorCustomizations": {
+    // 타이틀바 색상
+    // 상단 배경색
+    "titleBar.activeBackground": "#6A82FB", // 활성화
+    "titleBar.inactiveBackground": "#9cff8f", //비활성화
+    // 상단 글자색
+    "titleBar.activeForeground": "#fff", // 활성화
+    "titleBar.inactiveForeground": "#111111", //비활성화
+    // 에디터 커서 색상
+    "editorCursor.foreground": "#8adf83",
+    // 터미널 색상
+    // "terminal.background":"#292A44",
+    "terminal.foreground":"#F1EFF8",
+    "terminalCursor.background":"#F1EFF8",
+    "terminalCursor.foreground": "#8adf83", // 커서 색상
+    "terminal.ansiBlack":"#292A44",
+    "terminal.ansiBlue":"#2DE0A7",
+    "terminal.ansiBrightBlack":"#666699",
+    "terminal.ansiBrightBlue":"#2DE0A7",
+    "terminal.ansiBrightCyan":"#8EAEE0",
+    "terminal.ansiBrightGreen":"#6DFEDF",
+    "terminal.ansiBrightMagenta":"#7AA5FF",
+    "terminal.ansiBrightRed":"#A0A0C5",
+    "terminal.ansiBrightWhite":"#53495D",
+    "terminal.ansiBrightYellow":"#AE81FF",
+    "terminal.ansiCyan":"#8EAEE0",
+    "terminal.ansiGreen":"#6DFEDF",
+    "terminal.ansiMagenta":"#7AA5FF",
+    "terminal.ansiRed":"#A0A0C5",
+    "terminal.ansiWhite":"#F1EFF8",
+    "terminal.ansiYellow":"#AE81FF"
+  },
+  // 주석 색상
+  "editor.tokenColorCustomizations": {
+    "comments": "#d1abf5"
+},
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.fontSize": 13,
+  // 제외할 파일들
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.history": true,
+    "**/.project": true,
+    "**/.settings": true
+  },
+  "workbench.colorTheme": "Dango Theme",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.preferredDarkColorTheme": "Framer Syntax 2",
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.cursorSmoothCaretAnimation": "off",
+  "editor.cursorSurroundingLinesStyle": "default",
+  "editor.formatOnPaste": false,
+  "workbench.preferredHighContrastColorTheme": "Community Material Theme Ocean High Contrast",
+  "workbench.preferredHighContrastLightColorTheme": "Community Material Theme Lighter High Contrast",
+  "workbench.sideBar.location": "left",
+  "workbench.tree.enableStickyScroll": true,
+  // 트리뷰 간격조정
+  "workbench.tree.indent": 18,
+  "workbench.editor.decorations.colors": true
 }
