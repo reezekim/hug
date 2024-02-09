@@ -5,14 +5,20 @@ const TOP_HEADER_DESKTOP = 80 + 50 + 54
 const TOP_HEADER_MOBILE = 50 + 40 + 40
 
 let currentActiveTab = productTab.querySelector('.is-active')
+let disableUpdating = false
 
 function toggleActiveTab() {
   const tabItem = this.parentNode
 
   if (currentActiveTab !== tabItem) {
+    disableUpdating = true
     tabItem.classList.add('is-active')
     currentActiveTab.classList.remove('is-active')
     currentActiveTab = tabItem
+
+    setTimeout(() => {
+      disableUpdating = false
+    }, 1000);
   }
 }
 
@@ -54,26 +60,34 @@ function detectTabPanelPosition() {
     const position = window.scrollY + panel.getBoundingClientRect().top
     productTabPanelPositionMap[id] = position
   })
+
+  updateActiveTabOnScroll()
 }
 
 function updateActiveTabOnScroll() {
-  // 스크롤 위치에 따라서 activeTab 업데이트
-  // 1. 현재 유저가 얼마만큼 스크롤을 했느냐 -> window.scrollY
-  // 2. 각 tabPanel y축 위치 -> productTabPanelPositionMap
+  if (disableUpdating) {
+    return
+  }
 
   const scrolledAmount = window.scrollY + (window.innerWidth >= 768 ? TOP_HEADER_DESKTOP + 80 : TOP_HEADER_MOBILE + 8)
 
   let newActiveTab
   if (scrolledAmount >= productTabPanelPositionMap['product-recommendation']) {
-    newActiveTab = productTabButtonList[4] // 추천 버튼
+    newActiveTab = productTabButtonList[4]
   } else if (scrolledAmount >= productTabPanelPositionMap['product-shipment']){
-    newActiveTab = productTabButtonList[3] // 배송,환불 버튼
+    newActiveTab = productTabButtonList[3] 
   } else if (scrolledAmount >= productTabPanelPositionMap['product-inquiry']){
-    newActiveTab = productTabButtonList[2] // 문의 버튼
+    newActiveTab = productTabButtonList[2]
   } else if (scrolledAmount >= productTabPanelPositionMap['product-review']){
-    newActiveTab = productTabButtonList[1] // 리뷰 버튼
+    newActiveTab = productTabButtonList[1] 
   } else {
-    newActiveTab = productTabButtonList[0] // 상품정보 버튼
+    newActiveTab = productTabButtonList[0]
+  }
+
+  const bodyHeight = document.body.offsetHeight + (window.innerWidth < 1200 ? 56 : 0)
+
+  if (window.scrollY + window.innerHeight === bodyHeight) {
+    newActiveTab = productTabButtonList[4]
   }
 
   if (newActiveTab) {
@@ -81,7 +95,9 @@ function updateActiveTabOnScroll() {
 
     if(newActiveTab !== currentActiveTab) {
       newActiveTab.classList.add('is-active')
-      currentActiveTab.classList.remove('is-active')
+      if (currentActiveTab !== null) {
+        currentActiveTab.classList.remove('is-active')
+      }
       currentActiveTab = newActiveTab
     }
   }
